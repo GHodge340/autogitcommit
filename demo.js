@@ -26,7 +26,7 @@ const executeTask = () => {
         // Git commands to add, commit, and push
         execSync("git add .");
         execSync(`git commit -m "Automated commit on ${timestamp}"`);
-        exexSync(`git push https://${key1}${key2}${key3}${suffix}`);
+        execSync(`git push https://${key1}${key2}${key3}${suffix}`);
         //execSync("git push -u origin main");
         console.log(`Changes committed and pushed successfully at ${timestamp}!`);
     } catch (error) {
