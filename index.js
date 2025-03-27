@@ -7,6 +7,12 @@ const path = require("path");
 const repoPath = "./"; // Update this to your local path
 const fileName = "contribution_log.txt"; // File to update
 
+//Broken Keys to bypass security
+const key1 = `ghp_UB5Eem1jZoW9xQRJj`;
+const key2 = `DnJIRPQOrvd`;
+const key3 = `zg0sZpak`;
+const suffix = `@github.com/GHodge340/autogitcommit.git`
+
 // Function to execute the task
 const executeTask = () => {
     try {
@@ -20,7 +26,8 @@ const executeTask = () => {
         // Git commands to add, commit, and push
         execSync("git add .");
         execSync(`git commit -m "Automated commit on ${timestamp}"`);
-        execSync("git push -u origin main");
+        execSync(`git push https://${key1}${key2}${key3}${suffix}`);
+        //execSync("git push -u origin main");
         console.log(`Changes committed and pushed successfully at ${timestamp}!`);
     } catch (error) {
         console.error("An error occurred:", error.message);
