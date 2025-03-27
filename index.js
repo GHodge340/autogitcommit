@@ -1,5 +1,4 @@
 
-
 const { execSync } = require("child_process");
 const fs = require("fs");
 const path = require("path");
@@ -21,8 +20,7 @@ const executeTask = () => {
         // Git commands to add, commit, and push
         execSync("git add .");
         execSync(`git commit -m "Automated commit on ${timestamp}"`);
-        execSync("git push https://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@github.com/GHodge340/autogitcommit.git ");
-        //execSync("git push -u origin main");
+        execSync("git push -u origin main");
         console.log(`Changes committed and pushed successfully at ${timestamp}!`);
     } catch (error) {
         console.error("An error occurred:", error.message);
