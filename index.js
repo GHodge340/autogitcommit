@@ -42,7 +42,11 @@ const scheduleRandomTasks = () => {
     const interval = 24 * 60 * 60 * 1000 / numberOfRuns; // Average interval in milliseconds
 
     const scheduleTask = (remainingRuns) => {
-        if (remainingRuns === 0) return; // Stop when all tasks are executed
+        if (remainingRuns === 0) {
+				console.log(`${numberOfRuns} Commits made to Github in the last 24hrs`);
+				console.log(`RESTARTING GITCOMMIT ALGORITHM..`)
+				scheduleRandomTasks(); // Stop when all tasks are executed
+			}
 
         // Add randomness to the interval (e.g., ±20% of the average interval)
         const randomOffset = (Math.random() * 0.4 - 0.2) * interval;
